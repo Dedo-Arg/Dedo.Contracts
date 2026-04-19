@@ -7,5 +7,5 @@ public record AuditEventRequested(
     AuditEventType              AuditType,
     OperationStatus             Status,
     string?                     Detail   = null,
-    Dictionary<string, string>? Metadata = null
+    IReadOnlyDictionary<string, string>? Metadata = null
 ) : BaseEvent;

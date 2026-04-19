@@ -6,5 +6,5 @@ public record NotificationRequestedEvent(
     Guid                       UserId,
     NotificationChannel        Channel,
     string                     TemplateId,
-    Dictionary<string, string> Data
+    IReadOnlyDictionary<string, string> Data
 ) : BaseEvent;
