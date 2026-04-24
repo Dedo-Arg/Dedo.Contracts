@@ -12,3 +12,9 @@ public abstract class BaseException : Exception
         HttpStatus = httpStatus;
     }
 }
+
+
+
+
+
+
