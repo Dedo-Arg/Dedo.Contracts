@@ -11,6 +11,7 @@
     <!-- NuGet Package -->
     <PackageId>Dedo.Contracts</PackageId>
     <Version>1.0.9</Version>
+	  
     <Authors>DEDO Team</Authors>
     <Description>Shared contracts for all DEDO microservices</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
