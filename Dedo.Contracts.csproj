@@ -8,18 +8,12 @@
     <RootNamespace>Dedo.Contracts</RootNamespace>
     <AssemblyName>Dedo.Contracts</AssemblyName>
 
-    <!-- NuGet Package — version is injected by CI via /p:Version -->
+    <!-- NuGet Package -->
     <PackageId>Dedo.Contracts</PackageId>
     <Version>1.0.0</Version>
     <Authors>DEDO Team</Authors>
     <Description>Shared contracts for all DEDO microservices</Description>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <RepositoryUrl>https://github.com/battistoniramiro/Dedo.Contracts</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
-
-  <ItemGroup>
-    <None Include=".github\workflows\publish.yml" />
-  </ItemGroup>
 
 </Project>
