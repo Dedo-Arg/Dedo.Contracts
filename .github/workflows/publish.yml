@@ -1,0 +1,41 @@
+name: Build & Publish NuGet
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    name: Build, Pack & Publish
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+      # — 1. Checkout
+      - uses: actions/checkout@v4
+
+      # — 2. Setup .NET
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      # — 3. Restore
+      - run: dotnet restore
+
+      # — 4. Build
+      - run: dotnet build --configuration Release --no-restore
+
+      # — 5. Pack
+      - run: dotnet pack --configuration Release --no-build --output ./nupkg
+
+      # — 6. Publish to GitHub Packages
+      - name: Publish to GitHub Packages
+        run: >
+          dotnet nuget push ./nupkg/*.nupkg
+          --api-key ${{ secrets.NUGET_GITHUB_TOKEN }}
+          --source https://nuget.pkg.github.com/battistoniramiro/index.json
+          --skip-duplicate
